@@ -1,0 +1,11 @@
+env
+data/ncbi_dataset/
+data/Orthogroups/
+data/Proteomes/
+data/Resolved_Gene_Trees/
+data/Species_Tree
+.DS_Store
+.ipynb_checkpoints/
+.virtual_documents/
+Untitled.ipynb
+data/Phylogenetic_Hierarchical_Orthogroups
