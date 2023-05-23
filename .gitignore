@@ -9,3 +9,4 @@ data/Species_Tree
 .virtual_documents/
 Untitled.ipynb
 data/Phylogenetic_Hierarchical_Orthogroups
+aws_run_orthofinder_secret.sh
