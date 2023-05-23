@@ -1,7 +1,7 @@
 #!/bin/bash
 ## Set AWS credentials
-export AWS_ACCESS_KEY_ID=AKIAWHC4XC6G3CEJ5ZXJ
-export AWS_SECRET_ACCESS_KEY=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
+export AWS_ACCESS_KEY_ID=###
+export AWS_SECRET_ACCESS_KEY=###
 export DEFAULT_REGION_NAME=us-east-2
 export DEFAULT_OUTPUT_FORMAT=json
 
