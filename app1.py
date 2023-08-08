@@ -23,7 +23,7 @@ ncbi_tax = ncbi_taxonomy.NCBITaxa()
 
 #from app_imports import dash_orthoparser as dop
 #from orthofinder_utils import dash_ortho_parser as dop
-from orthofinder_utils import dash_ortho_parser_d as dop
+from orthofinder_utils import dash_ortho_parser as dop
 import plotly.io as pio
 
 # =============================================================================
@@ -499,7 +499,10 @@ def update_store_with_selected_node(rank_scinames, tree_clickData):
         ])
 def species_tree_w_bargraph(HOGs,node_label_mode, species_accession, node_store):
     node_name = node_store['selected_node']
-
+    
+    if node_name==None:
+        node_name='N0'
+    print(node_name)
     species_name = afn.acc2name(acc2name_path=acc2name_path)[species_accession]
     tree = jdt.read_treefile(path_to_species_tree)
     if node_name in [cl.name for cl in tree.get_nonterminals()]:
@@ -627,6 +630,8 @@ def update_genome_map(HOG, species, tree_clickData, node_clickData ):
 def find_protein_by_keyword(accession, n_clicks, node_store, keyword):
     import re
     node_name = node_store['selected_node'] 
+    if node_name==None:
+        node_name='N0'
     dop_obj = dop.DashOrthoParser('./data', node_name)
     #dop_obj = make_dopObj_from_click(clickData)
     if n_clicks:

@@ -10,3 +10,5 @@ data/Species_Tree
 Untitled.ipynb
 data/Phylogenetic_Hierarchical_Orthogroups
 aws_run_orthofinder_secret.sh
+**.sh
+**.pptx

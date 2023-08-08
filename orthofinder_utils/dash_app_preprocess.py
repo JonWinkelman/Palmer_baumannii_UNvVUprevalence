@@ -43,7 +43,7 @@ def run_all(path_to_results):
     write_AssemblyAccession_to_SpeciesName_from_summaries(path_to_results)
     copy_folders_from_orthoresults(path_to_results)
     os.chdir(path_to_app_folder)
-    initial_check(path_to_results)
+    #initial_check(path_to_results)
     #make_genome_annotation_files(path_to_results)
     
 #
@@ -90,8 +90,8 @@ def initial_check(path_to_results):
     """
     check that assemblies in orthogroups.tsv, proteome folder, and ncbi/data folder are equivalent
     """
-    orth_assemblies = list(pd.read_csv(os.path.join(path_to_results, 
-                        'orthogroups/orthogroups.tsv'), sep = '\t').columns[1:]) 
+#     orth_assemblies = list(pd.read_csv(os.path.join(path_to_results, 
+#                         'orthogroups/orthogroups.tsv'), sep = '\t').columns[1:]) 
     proteome_assemblies = accessions_from_proteome_dir('./data/Proteomes')
     
     ncbidata_assemblies = [folder for folder in os.listdir('./data/ncbi_dataset/data')
@@ -219,17 +219,17 @@ def make_genome_annotation_files(path_to_results):
 def copy_folders_from_orthoresults(path_to_results):
     """Copy data from orthofinder/results (.gitignored) folder into ./Data folder """
     import shutil
-    src_ortho = os.path.join(path_to_results,'Orthogroups')
-    shutil.copytree(src_ortho, './data/Orthogroups')
+    #src_ortho = os.path.join(path_to_results,'Orthogroups')
+    #shutil.copytree(src_ortho, './data/Orthogroups')
     src_HOGs = os.path.join(path_to_results,'Phylogenetic_Hierarchical_Orthogroups')
     shutil.copytree(src_HOGs, './data/Phylogenetic_Hierarchical_Orthogroups')
     src_gene_tree = os.path.join(path_to_results,'Resolved_Gene_Trees')
     shutil.copytree(src_gene_tree, './data/Resolved_Gene_Trees')
     src_spec_tree = os.path.join(path_to_results,'Species_Tree')
     shutil.copytree(src_spec_tree, './data/Species_Tree')
-    OrthogroupParser(path_to_results).N0_HOG_counts
-    src_N0_counts = os.path.join(path_to_results,'N0_HOG_counts.tsv')
-    shutil.copyfile(src_N0_counts, './Data/N0_HOG_counts.tsv')
+    #OrthogroupParser(path_to_results).N0_HOG_counts
+    #src_N0_counts = os.path.join(path_to_results,'N0_HOG_counts.tsv')
+    #shutil.copyfile(src_N0_counts, './Data/N0_HOG_counts.tsv')
         
     
 
